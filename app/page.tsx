@@ -144,7 +144,7 @@ export default function Home() {
           {blogPosts.map((post) => (
             <Link
               key={post.slug}
-              href={`/blog/${post.slug}`}
+              href={`/${post.slug}`}
               className="flex-shrink-0 w-80 bg-[#E5DFD5] rounded-lg hover:shadow-lg transition-shadow duration-300"
               style={{ padding: '3rem' }}
             >
