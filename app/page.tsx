@@ -1,16 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const blogPosts = [
-  {
-    slug: "ergonomics-workflow",
-    title: "My Ergonomic Developer Workflow",
-    excerpt: "How I use Neovim, a split keyboard, and Vimium to reduce strain and boost productivity.",
-    date: "October 3, 2025",
-  },
-];
+import { getAllPosts } from "@/lib/posts";
 
 export default function Home() {
+  const blogPosts = getAllPosts();
+  
   return (
     <div className="min-h-screen px-8 md:px-16 lg:px-24 xl:px-32" style={{ paddingTop: '120px', paddingLeft: '120px', paddingRight: '120px' }}>
       {/* Home Section */}
