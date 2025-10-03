@@ -31,17 +31,17 @@ export default function Home() {
 
           {/* Right side - Description */}
           <div className="w-full lg:w-3/4 flex flex-col lg:flex-row gap-8">
-            <div className="flex-1 space-y-6">
-              <h1 className="text-4xl md:text-5xl font-bold mb-12">
+            <div className="flex-1">
+              <h1 className="text-4xl md:text-5xl font-bold" style={{ marginBottom: '2rem' }}>
                 howdy!
               </h1>
 
-              <div className="space-y-6 text-lg leading-relaxed" style={{ lineHeight: '3.5' }}>
+              <div className="text-lg" style={{ lineHeight: '1.5' }}>
                 <p className="text-xl">
                   i&apos;ll be joining <span className="text-[#998B7B] font-semibold">nvidia</span> after i graduate from <span className="text-[#998B7B] font-semibold">ucla</span>
                 </p>
                 
-                <p>
+                <p >
                   i built{" "}
                   <a 
                     href="https://github.com/RohanAdwankar/share-df" 
@@ -67,7 +67,7 @@ export default function Home() {
                   </a>
                 </p>
 
-                <p>
+                <p style={{ marginBottom: '2.5rem' }}>
                   i use{" "}
                   <a 
                     href="https://github.com/RohanAdwankar/nvim" 
@@ -82,7 +82,7 @@ export default function Home() {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-6 mt-8">
+              <div className="flex gap-6" style={{ marginTop: '2.5rem' }}>
                 <a 
                   href="https://github.com/RohanAdwankar"
                   target="_blank"
@@ -143,8 +143,8 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="max-w-7xl mx-auto mt-24" style={{ marginTop: '6rem' }}>
-        <h2 className="text-3xl font-bold mb-12" style={{ marginBottom: '3rem' }}>thoughts</h2>
+      <section className="max-w-7xl mx-auto mt-24" style={{ marginTop: '2rem' }}>
+        <h2 className="text-3xl font-bold mb-12" style={{ marginBottom: '1rem' }}>thoughts</h2>
         
         <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
           {blogPosts.map((post) => (
