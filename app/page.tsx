@@ -9,15 +9,16 @@ export default function Home() {
     <div className="min-h-screen px-8 md:px-16 lg:px-24 xl:px-32" style={{ paddingTop: '120px', paddingLeft: '120px', paddingRight: '120px' }}>
       {/* Home Section */}
       <section className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 items-stretch">
           {/* Left side - Profile Picture */}
-          <div className="w-full lg:w-1/4 flex justify-center lg:justify-start">
-            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-[#998B7B] shadow-lg">
+          <div className="w-full lg:w-1/4 flex justify-center lg:justify-start items-start">
+            <div className="relative rounded-full overflow-hidden border-4 border-[#998B7B] shadow-lg" style={{ width: '76%', aspectRatio: '1' }}>
               <Image
                 src="/profile.jpg"
                 alt="Rohan Adwankar"
                 fill
                 className="object-cover object-right"
+                style={{ transform: 'scale(1.4)' }}
                 priority
               />
             </div>
@@ -26,41 +27,19 @@ export default function Home() {
           {/* Right side - Description */}
           <div className="w-full lg:w-3/4 flex flex-col lg:flex-row gap-8">
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-bold" style={{ marginBottom: '2rem' }}>
+              <h1 className="text-4xl md:text-5xl font-bold" style={{ marginBottom: '1.5rem' }}>
                 howdy!
               </h1>
 
               <div className="text-lg" style={{ lineHeight: '1.5' }}>
-                <p className="text-xl">
+                <p>
+                  i'm rohan adwanakar and i like building things! 
+                </p>
+               
+                <p>
                   i&apos;ll be joining <span className="text-[#998B7B] font-semibold">nvidia</span> after i graduate from <span className="text-[#998B7B] font-semibold">ucla</span>
                 </p>
                 
-                <p >
-                  i built{" "}
-                  <a 
-                    href="https://github.com/RohanAdwankar/share-df" 
-                    className="text-[#7894B0] hover:underline font-medium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    share-df
-                  </a>{" "}
-                  for collaborating on python dataframes
-                  {" "}
-                  <a 
-                    href="https://pypi.org/project/share-df/" 
-                    className="inline-block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img 
-                      src="https://static.pepy.tech/badge/share-df" 
-                      alt="PyPI Downloads"
-                      className="inline"
-                    />
-                  </a>
-                </p>
-
                 <p style={{ marginBottom: '2.5rem' }}>
                   i use{" "}
                   <a 
