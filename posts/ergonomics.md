@@ -20,6 +20,6 @@ For those cases I use [Vinav](https://github.com/RohanAdwankar/vinav) which enab
 
 ## Split Keyboard
 
-Ideally I will eventually get an ergonomic keyboard which is split so that the wrists dont have to bend inwards but for now I have a sort of strange setuIdeally I will eventually get an ergonomic keyboard which is split so that the wrists dont have to bend inwards but for now I have a sort of strange setup.
+Ideally I will eventually get an ergonomic keyboard which is split so that the wrists dont have to bend inwards but for now I have a sort of strange setup.
 I use an external keyboard and my laptop keyboard together while viewing on an extnernal monitor.
 This allows me to have hands apart with one keyboard for each hand.
