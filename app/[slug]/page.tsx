@@ -18,8 +18,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen px-8 md:px-16 lg:px-24 xl:px-32" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
-      <article className="max-w-4xl mx-auto">
+    <div className="min-h-screen flex items-center justify-center" style={{ padding: '80px 40px' }}>
+      <article className="max-w-3xl w-full">
         <Link 
           href="/"
           className="text-[#7894B0] hover:underline mb-8 inline-block"

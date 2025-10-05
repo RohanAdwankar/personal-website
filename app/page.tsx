@@ -2,36 +2,36 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
-export default function Home() {
+export default async function Home() {
   const blogPosts = getAllPosts();
   
   return (
-    <div className="min-h-screen px-8 md:px-16 lg:px-24 xl:px-32" style={{ paddingTop: '120px', paddingLeft: '120px', paddingRight: '120px' }}>
-      {/* Home Section */}
-      <section className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-          {/* Left side - Profile Picture */}
-          <div className="w-full lg:w-1/4 flex justify-center lg:justify-start items-start">
-            <div className="relative rounded-full overflow-hidden border-4 border-[#998B7B] shadow-lg" style={{ width: '76%', aspectRatio: '1' }}>
-              <Image
-                src="/profile.jpg"
-                alt="Rohan Adwankar"
-                fill
-                className="object-cover object-right"
-                style={{ transform: 'scale(1.4)' }}
-                priority
-              />
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="max-w-4xl w-full mx-auto" style={{ padding: '40px' }}>
+        {/* Home Section */}
+        <section className="mb-20">
+          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start justify-center">
+            {/* Left side - Profile Picture */}
+            <div className="flex-shrink-0">
+              <div className="relative rounded-full overflow-hidden border-4 border-[#998B7B] shadow-lg" style={{ width: '200px', height: '200px' }}>
+                <Image
+                  src="/profile.jpg"
+                  alt="Rohan Adwankar"
+                  fill
+                  className="object-cover object-right"
+                  style={{ transform: 'scale(1.4)' }}
+                  priority
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Right side - Description */}
-          <div className="w-full lg:w-3/4 flex flex-col lg:flex-row gap-8">
-            <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-bold" style={{ marginBottom: '1.5rem' }}>
+            {/* Right side - Description and Thoughts */}
+            <div className="flex-1 w-full">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left">
                 howdy!
               </h1>
 
-              <div className="text-lg" style={{ lineHeight: '1.5' }}>
+              <div className="text-lg space-y-4 text-center md:text-left" style={{ lineHeight: '1' }}>
                 <p>
                   i'm rohan adwanakar and i like building things! 
                 </p>
@@ -40,7 +40,7 @@ export default function Home() {
                   i&apos;ll be joining <span className="text-[#998B7B] font-semibold">nvidia</span> after i graduate from <span className="text-[#998B7B] font-semibold">ucla</span>
                 </p>
                 
-                <p style={{ marginBottom: '2.5rem' }}>
+                <p style={{ marginBottom: '0.5rem' }}>
                   i use{" "}
                   <a 
                     href="https://github.com/RohanAdwankar/nvim" 
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-6" style={{ marginTop: '2.5rem' }}>
+              <div className="flex gap-6 mt-6 justify-center md:justify-start">
                 <a 
                   href="https://github.com/RohanAdwankar"
                   target="_blank"
@@ -101,42 +101,28 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-            </div>
 
-            {/* Language Stats - Right Side */}
-            <div className="flex-shrink-0 lg:w-auto">
-              <img 
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=RohanAdwankar&hide=html,css&langs_count=10&v=180&layout=compact&hide_border=true&bg_color=E5DFD5&text_color=3A5864&title_color=3A5864" 
-                alt="Most used languages"
-                className="rounded-lg"
-              />
+              {/* Thoughts */}
+              <div style={{ marginTop: '0.7rem' }}>
+                <h2 className="text-3xl font-bold text-center md:text-left">thoughts</h2>
+                
+                <ul className="space-y-3 text-center md:text-left" style={{ paddingLeft: '0' }}>
+                  {blogPosts.map((post) => (
+                    <li key={post.slug} style={{ listStyle: 'none' }}>
+                      <Link
+                        href={`/${post.slug}`}
+                        className="text-[#7894B0] hover:underline text-lg"
+                      >
+                        • {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="max-w-7xl mx-auto mt-24" style={{ marginTop: '2rem' }}>
-        <h2 className="text-3xl font-bold mb-12" style={{ marginBottom: '1rem' }}>thoughts</h2>
-        
-        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-          {blogPosts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/${post.slug}`}
-              className="flex-shrink-0 w-80 bg-[#E5DFD5] rounded-lg hover:shadow-lg transition-shadow duration-300"
-              style={{ padding: '3rem' }}
-            >
-              <h3 className="text-xl font-semibold mb-3 text-[#3A5864]">
-                {post.title}
-              </h3>
-              <p className="text-[#3A5864]/80 leading-relaxed">
-                {post.excerpt}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
