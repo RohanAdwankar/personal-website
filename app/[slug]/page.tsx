@@ -18,20 +18,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ padding: '80px 40px' }}>
+    <div className="min-h-screen flex items-center justify-center" style={{ padding: '20px 40px' }}>
       <article className="max-w-3xl w-full">
-        <Link 
+        <Link
           href="/"
-          className="text-[#7894B0] hover:underline mb-8 inline-block"
+          className="text-[#7894B0] hover:underline mb-3 inline-block"
+          style={{ lineHeight: '0' }}
         >
           ← Back to home
         </Link>
-        
-        <div 
+
+        <div
           className="prose prose-lg max-w-none"
-          style={{ lineHeight: '2' }}
-          dangerouslySetInnerHTML={{ 
-            __html: parseMarkdown(post.content)
+          style={{ lineHeight: '1.6' }}
+          dangerouslySetInnerHTML={{
+            __html: parseMarkdown(post.content),
           }}
         />
       </article>
